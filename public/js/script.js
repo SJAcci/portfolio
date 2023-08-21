@@ -15,6 +15,5 @@ function getTime(){
 
 window.addEventListener('load', function(){
     getTime()
-
     setInterval(getTime, 1000);
 })
