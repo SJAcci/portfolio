@@ -11,6 +11,16 @@
     <script src="./public/js/script.js"></script>
 </head>
 <body>
+    <aside class="pop_blueScreen">
+        <span>Windows</span>
+        <p>
+            A Fatal exception 0E has occured at 0028 : C004CE67 in UXD UFAT(01) * 0000B*97. The current application will be terminated.<br><br>
+            Press any key to terminate the current application.<br>
+            * Press CTRL + ALT + DEL again to restart your computer.<br>
+            &nbsp;&nbsp;You will lose any unsaved information in all applications.
+        </p>
+        <p>Press any key to continue</p>
+    </aside>
     <main>
         <button type="button" class="btn_fn" onclick="btn_openFile()">
             <img src="./public/img/img_file.png" alt="">
@@ -28,6 +38,17 @@
             <img src="./public/img/img_trash.png" alt="">
             휴지통
         </button> -->
+        <aside class="pop_err">
+            <div class="bx_btn">
+                <p>시스템 종료 오류</p>
+                <button type="button" class="btn_close" onclick="btn_close('.pop_err')"></button>
+            </div>
+            <div class="wrap_pop">
+                <img src="./public/img/img_err.png" alt=""> 시스템을 종료할 수 없습니다.
+                <i></i>
+                <button type="button" class="btn_confirm" onclick="btn_confirm()">확인</button>
+            </div>
+        </aside>
 
         <aside class="pop_file">
             <div class="bx_btn">
@@ -38,13 +59,21 @@
             </div>
             <img src="./public/img/img_filemid.png" alt="" class="img_filemid">
             <div class="bx_fileWrap">
+                <a href="#" target="_blank">babara</a>
+                <a href="#" target="_blank">cert_pc</a>
+                <a href="#" target="_blank">cert_mobile</a>
+                <a href="#" target="_blank">herz</a>
+                <a href="#" target="_blank">medbox</a>
                 <a href="#" target="_blank">miltoworld</a>
+                <a href="#" target="_blank">orchestro</a>
+                <a href="#" target="_blank">quantec</a>
+                <a href="#" target="_blank">zino</a>
             </div>
             <img src="./public/img/img_filebottom.png" alt="" class="img_filebottom">
         </aside>
 
         <nav class="gnb">
-            <button type="button"><img src="./public/img/img_logout.png" alt="">시스템 종료</button>
+            <button type="button" onclick="btn_logout()"><img src="./public/img/img_logout.png" alt="">시스템 종료</button>
         </nav>
     </main>
 

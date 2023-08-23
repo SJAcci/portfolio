@@ -33,3 +33,19 @@ function btn_max(el){
 function btn_close(el){
     document.querySelector(`${el}`).classList.remove('active')
 }
+
+function btn_logout(){
+    document.querySelector('.gnb').classList.remove('active')
+    document.querySelector('.pop_err').classList.add('active')
+}
+
+function btn_confirm(){
+    document.querySelector('.pop_err').classList.remove('active')
+    document.querySelector('.pop_blueScreen').classList.add('active')
+}
+
+window.addEventListener('keyup', function (e) {
+    if (document.querySelector('.pop_blueScreen').classList.contains('active')) {
+        document.querySelector('.pop_blueScreen').classList.remove('active')
+    }
+})
