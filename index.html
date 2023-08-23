@@ -12,7 +12,7 @@
 </head>
 <body>
     <main>
-        <button type="button" class="btn_fn">
+        <button type="button" class="btn_fn" onclick="btn_openFile()">
             <img src="./public/img/img_file.png" alt="">
             내 문서
         </button>
@@ -28,13 +28,34 @@
             <img src="./public/img/img_trash.png" alt="">
             휴지통
         </button> -->
+
+        <aside class="pop_file">
+            <div class="bx_btn">
+                <p><img src="./public/img/img_filehead.png" alt="">&nbsp;내 문서</p>
+                <button type="button" class="btn_min" onclick="btn_min('.pop_file')"></button>
+                <button type="button" class="btn_max" onclick="btn_max('.pop_file')"></button>
+                <button type="button" class="btn_close" onclick="btn_close('.pop_file')"></button>
+            </div>
+            <img src="./public/img/img_filemid.png" alt="" class="img_filemid">
+            <div class="bx_fileWrap">
+                <a href="#" target="_blank">miltoworld</a>
+            </div>
+            <img src="./public/img/img_filebottom.png" alt="" class="img_filebottom">
+        </aside>
+
+        <nav class="gnb">
+            <button type="button"><img src="./public/img/img_logout.png" alt="">시스템 종료</button>
+        </nav>
     </main>
 
-    <nav>
-        <button type="button" class="btn_menu">
+    <nav class="fnb">
+        <button type="button" class="btn_gnb" onclick="btn_gnb()">
             <img src="./public/img/img_menu.png" alt="">
             시작
         </button>
+        <div class="bx_icon">
+
+        </div>
         <div class="bx_media">
             <p class="t_clock"></p>
         </div>

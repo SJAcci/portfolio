@@ -5,35 +5,137 @@
 /* === main === */
 body > *{ width: 1204px; margin: 0 auto;}
 main{ 
-    height: calc(100vh - 68px); padding: 62px 50px;
+    position: relative;
+    height: calc(100vh - 52px); padding: 58px 50px;
     background: #008080;
 }
 
-.btn_fn{ display: flex; flex-flow: column nowrap; align-items: center; color: #fff; font-size: 23px; }
-.btn_fn img{ height: 100px;}
+.btn_fn{ display: flex; flex-flow: column nowrap; align-items: center; color: #fff; font-size: 22px; }
+.btn_fn img{ height: 80px;}
+
+.btn_min{ background: url(../img/img_min.png) no-repeat center/100% 100%;}
+.btn_max{ background: url(../img/img_max.png) no-repeat center/100% 100%;}
+.btn_close{ margin-left: 2px; background: url(../img/img_close.png) no-repeat center/100% 100%;}
 
 /**************************************************/
-/* === nav === */
-nav{
+/* === .fnb === */
+.fnb{
     display: flex; align-items: center; 
-    height: 68px; padding: 0 6px;
+    height: 52px; padding: 5px 6px;
     border-top: 3px solid #FFF; background: #C0C0C0;
 }
-.btn_menu{
-    display: flex; align-items: center; justify-content: center; gap: 0 5px;
-    width: 132px; height:55px;
-    background: url(../img/bg_menu.png) no-repeat center/100%;
-    font-size: 26px; font-weight: 700;
+.fnb > *{height: 100%;}
+
+/* btn_gnb */
+.btn_gnb{
+    display: flex; align-items: center; justify-content: center; gap: 0 8px;
+    width: 118px; 
+    background: url(../img/bg_menu.png) no-repeat center/100% 100%;
+    font-size: 24px; font-weight: 700;
 }
-.btn_menu img{ width: 40px; }
-.btn_menu:hover{ filter: brightness(95%);}
-.btn_menu:active{
+.btn_gnb img{ width: 32px; }
+.btn_gnb:hover{ filter: brightness(95%);}
+.btn_gnb:active{
     outline: 3px dashed #000; outline-offset: -10px;
 }
 
+/* bx_icon */
+.bx_icon{ 
+    position: relative; flex: 1; margin: 0 6px; padding: 0 6px; 
+    border-color: #808080; border-style: solid; border-width: 0 2px;
+}
+.bx_icon:before, .bx_icon:after{
+    position: absolute;  top: 0;
+    display: block; width: 2px; height: 100%; background-color: #fff;
+    content: '';
+}
+.bx_icon:before{left: -4px;}
+.bx_icon:after{right: -4px;}
+
+/* bx_media */
 .bx_media{
     display: flex; align-items: center; justify-content: flex-end;
-    min-width: 320px; height: 54px; padding: 0 20px; margin-left: auto;
-    background: url(../img/bg_media.png) no-repeat center/100%;
+    min-width: 200px; padding: 0 16px; margin-left: auto;
+    background: url(../img/bg_media.png) no-repeat center/100% 100%;
 }
-.t_clock{ font-size: 23px; font-weight: 600;}
+.t_clock{ font-size: 22px; font-weight: 600;}
+
+/**************************************************/
+/* === gnb === */
+.gnb{
+    position: absolute; bottom: -4px; left: 0; z-index: 10;
+    display: flex; flex-flow: column nowrap; justify-content: flex-end;
+    width: 300px; min-height: 400px; padding: 4px 4px 4px 32px;
+    background: url(../img/bg_gnb.png) no-repeat center/100% 100%;
+    opacity: 0; visibility: collapse;
+}
+.gnb.active{ opacity: 1; visibility: visible}
+.gnb:before{
+    position: absolute; bottom: 2px; left: 0; z-index: 1;
+    display: block; width: 32px; height: calc(100% - 6px);
+    border-bottom: 2px solid #B7B7FF;
+    border-left: 2px solid #B7B7FF;
+    background: linear-gradient(180deg, #00007D 0%, #0000AD 100%);
+    content: '';
+}
+.gnb:after{
+    position: absolute; bottom: 80px; left: -56px; z-index: 2;
+    content: 'Windows98'; color: #fff; letter-spacing: -0.022px; font-size: 32px;
+    transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+}
+.gnb button{ 
+    display: flex; align-items: center; gap: 0 4px; 
+    width: 100%; height: 48px; padding: 2px 6px; 
+    text-align: left; font-size: 18px; letter-spacing: -0.81px; 
+    background-color: #c0c0c0;
+}
+.gnb button:hover{ filter: brightness(95%); -webkit-filter: brightness(95%); }
+.gnb button img{ height: 100%;}
+
+/**************************************************/
+/* === pop_file === */
+.pop_file{
+    position: absolute; top: 50%; left: 50%; z-index: 100;
+    width: 600px; height: 500px; padding-right: 3px;
+    border-top: 1px solid #FFF; border-left: 1px solid #FFF;
+    background: #C0C0C0;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    opacity: 0; visibility: collapse;
+}
+.pop_file.active{ opacity: 1; visibility: visible}
+.pop_file.min{ }
+.pop_file.max{ }
+
+/* bx_btn */
+.pop_file .bx_btn{
+    display: flex; align-items: center;
+    width: 100%; height: 22px; padding-right: 2px;
+    background: linear-gradient(90deg, #000080 0%, #1084D0 100%);
+
+}
+.pop_file .bx_btn button{ width: 20px; height: 16px;}
+.pop_file .bx_btn p{ display: inline-flex; align-items: center; height: 100%; margin-right: auto; font-size: 12px; color: #fff;}
+.pop_file .bx_btn img{ height: 100%;}
+
+.pop_file :is(.img_filemid, .img_filebottom){ width: 100%;}
+
+/* bx_fileWrap */
+.pop_file .bx_fileWrap{
+    display: grid; grid-template-columns: repeat(7,1fr); gap: 26px 0;
+    width: 100%; height: 363px; padding: 6px 34px 6px; overflow-y: auto;
+    background: url(../img/img_filewrap.png) no-repeat center/100% 100%;
+}
+.pop_file .bx_fileWrap a{ display: flex; flex-flow: column nowrap; align-items: center; width: 100%; font-size: 12px; }
+.pop_file .bx_fileWrap a::before{
+    display: block; width: 32px; height: 32px; margin: 0 auto;
+    background: url(../img/img_portfolio.png) no-repeat center/contain;
+    content: '';
+}

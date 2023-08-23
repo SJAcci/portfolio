@@ -13,7 +13,23 @@ function getTime(){
 
 }
 
-window.addEventListener('load', function(){
+document.addEventListener("DOMContentLoaded", function(){
     getTime()
     setInterval(getTime, 1000);
 })
+
+function btn_gnb(){
+    document.querySelector('.gnb').classList.toggle('active')
+}
+function btn_openFile(){
+    document.querySelector('.pop_file').classList.add('active')
+}
+function btn_min(el){
+
+}
+function btn_max(el){
+    
+}
+function btn_close(el){
+    document.querySelector(`${el}`).classList.remove('active')
+}
