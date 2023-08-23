@@ -151,7 +151,7 @@ main{
 /**************************************************/
 /* === pop_err === */
 .pop_err{
-    z-index: 100; width: 358px;
+    z-index: 100; width: 358px; padding: 2px;
     background: url(../img/img_poperr.png) no-repeat center/100% 100%;
 }
 .pop_err .bx_btn{ padding-left: 6px;;}
