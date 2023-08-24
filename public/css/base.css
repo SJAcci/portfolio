@@ -13,8 +13,8 @@
     word-break: keep-all; line-height: normal;
     font-family: 'DungGeunMo', sans-serif; font-weight: 400; color: #000;
 }
-button{ cursor: pointer; border: none; background: transparent; }
-a{ text-decoration: unset;}
+button{ cursor: default; border: none; background: transparent; }
+a{ text-decoration: unset;  cursor: default; }
 
 /**************************************************/
 /* ================================= base set */

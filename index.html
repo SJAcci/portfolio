@@ -26,27 +26,17 @@
             <img src="./public/img/img_file.png" alt="">
             내 문서
         </button>
-        <!-- <button type="button" class="btn_fn">
-            <img src="./public/img/img_internet.png" alt="">
-            Internet<br>Explorer
-        </button>
-        <button type="button" class="btn_fn">
-            <img src="./public/img/img_computer.png" alt="">
-            내 컴퓨터
-        </button>
-        <button type="button" class="btn_fn">
-            <img src="./public/img/img_trash.png" alt="">
-            휴지통
-        </button> -->
         <aside class="pop_err">
-            <div class="bx_btn">
-                <p>시스템 종료 오류</p>
-                <button type="button" class="btn_close" onclick="btn_close('.pop_err')"></button>
-            </div>
             <div class="wrap_pop">
-                <img src="./public/img/img_err.png" alt=""> 시스템을 종료할 수 없습니다.
-                <i></i>
-                <button type="button" class="btn_confirm" onclick="btn_confirm()">확인</button>
+                <div class="bx_btn">
+                    <p>시스템 종료 오류</p>
+                    <button type="button" class="btn_close" onclick="btn_close('.pop_err')"></button>
+                </div>
+                <div class="bx_alert">
+                    <img src="./public/img/img_err.png" alt=""> 시스템을 종료할 수 없습니다.
+                    <i></i>
+                    <button type="button" class="btn_confirm" onclick="btn_confirm()">확인</button>
+                </div>
             </div>
         </aside>
 
@@ -73,7 +63,10 @@
         </aside>
 
         <nav class="gnb">
-            <button type="button" onclick="btn_logout()"><img src="./public/img/img_logout.png" alt="">시스템 종료</button>
+            <div class="wrap">
+                <button type="button" onclick="btn_logout()"><img src="./public/img/img_logout.png" alt="">시스템 종료</button>
+            </div>
+            <div class="bg" onclick="btn_gnb()"></div>
         </nav>
     </main>
 

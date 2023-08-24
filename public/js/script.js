@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 function btn_gnb(){
     document.querySelector('.gnb').classList.toggle('active')
+    console.log("yes")
 }
 function btn_openFile(){
     document.querySelector('.pop_file').classList.add('active')
@@ -36,6 +37,7 @@ function btn_close(el){
 
 function btn_logout(){
     document.querySelector('.gnb').classList.remove('active')
+    document.querySelector('.pop_file').classList.remove('active')
     document.querySelector('.pop_err').classList.add('active')
 }
 
@@ -46,6 +48,7 @@ function btn_confirm(){
 
 window.addEventListener('keyup', function (e) {
     if (document.querySelector('.pop_blueScreen').classList.contains('active')) {
+        document.querySelector('.gnb').classList.remove('active')
         document.querySelector('.pop_blueScreen').classList.remove('active')
     }
 })
